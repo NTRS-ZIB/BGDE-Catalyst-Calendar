@@ -149,6 +149,37 @@
   .dot-insider { background: var(--pink); }
   .dot-industry { background: var(--yellow); }
 
+
+  /* ── STRUCTURAL NOTE / DEPENDENCY CHAIN ── */
+  .gate {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 32px;
+  }
+  .gate h2 {
+    font-size: 14px; font-weight: 600; color: #fff;
+    margin: 0 0 10px; padding: 0; border: none;
+  }
+  .gate p { font-size: 13px; color: var(--label); font-weight: 300; margin-bottom: 10px; }
+  .gate p strong { color: var(--text); font-weight: 600; }
+  .chain {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    margin: 14px 0 4px;
+  }
+  .node {
+    font-family: var(--mono); font-size: 10.5px;
+    background: var(--surface2); border: 1px solid var(--border2);
+    border-radius: 4px; padding: 5px 9px; color: var(--label);
+  }
+  .node.done { background: var(--green-dim); border-color: rgba(52,211,153,0.3); color: var(--green); }
+  .node.key  { background: var(--blue-dim); border-color: rgba(79,142,247,0.35); color: var(--blue); font-weight: 600; }
+  .arrow { color: var(--muted); font-size: 12px; }
+  .gate-foot { font-size: 12px; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+  .gate-foot b { color: var(--label); }
+
   /* ── HORIZON BLOCK ───────────────────── */
   .horizon {
     margin-bottom: 48px;
@@ -354,6 +385,42 @@
   .b-insider   { background: var(--pink-dim); color: var(--pink); border-color: rgba(244,114,182,0.25); }
   .b-industry  { background: var(--yellow-dim); color: var(--yellow); border-color: rgba(251,191,36,0.25); }
 
+  /* ── STRUCTURAL NOTE / DEPENDENCY CHAIN ── */
+  .gate-note {
+    background: linear-gradient(180deg, rgba(79,142,247,0.07), rgba(79,142,247,0.02));
+    border: 1px solid rgba(79,142,247,0.22);
+    border-left: 3px solid var(--blue);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 30px;
+  }
+  .chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .node {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 5px;
+    padding: 5px 9px;
+    color: var(--label);
+    white-space: nowrap;
+  }
+  .node b { color: var(--green); font-weight: 600; }
+  .node.locked {
+    border-color: rgba(251,191,36,0.3);
+    background: var(--yellow-dim);
+    color: var(--yellow);
+  }
+  .arrow { color: var(--muted); font-size: 12px; }
+  @media (max-width: 640px) {
+    .node { font-size: 9.5px; padding: 4px 7px; }
+  }
+
   /* ── SUMMARY TABLE ───────────────────── */
   .summary-section {
     margin-top: 56px;
@@ -421,25 +488,13 @@
   </div>
   <div class="badge-row">
     <span class="badge badge-blue">NASDAQ</span>
-    <span class="badge badge-yellow">Sub-Micro Cap · ~$41M Mkt Cap</span>
+    <span class="badge badge-yellow">Sub-Micro Cap · ~$33M Mkt Cap</span>
     <span class="badge badge-blue">146 MW online · up to 300 MW TX buildout</span>
     <span class="badge badge-blue">Horizons: 3M · 6M · 12M</span>
     <span class="badge badge-yellow">No Buy/Sell Recommendation</span>
   </div>
-  <div class="disclaimer" style="background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.25);color:var(--green);margin-top:10px;">
-    📋 <strong>UPDATE LOG — July 21, 2026 (latest):</strong> On July 20, 2026 BGDE announced the Texas Hood County acquisition has <strong>CLOSED</strong> via the 50/50 JV with 10NetZero. Per the SEC 8-K, the JV acquired 30 of the 50 acres on July 15, 2026 from Century Oaks for ~$10M cash (option on the remainder for +$600K) through Texas Load House, LLC. Operational capacity now confirmed at 146 MW; full-buildout ceiling revised to "up to 300 MW"; company now "actively engaged with potential development partners and offtakers." Catalyst #18 upgraded from LOI-pending to CLOSED. Source: SEC Form 8-K &amp; GlobeNewswire, July 20, 2026.
-  </div>
-  <div class="disclaimer" style="background:rgba(52,211,153,0.06);border-color:rgba(52,211,153,0.2);color:var(--green);margin-top:8px;">
-    📋 <strong>UPDATE LOG — July 8, 2026:</strong> On July 6, 2026 BGDE announced (1) a 50/50 JV with 10NetZero + signed LOI to acquire a power-ready Hood County, Texas AI datacenter site (17 MW live → up to 311 MW; lifts operational capacity to 146 MW); (2) a $15.03M insider-led Series D convertible preferred raise; and (3) engagement of Northland Capital Markets as AI/HPC financial advisor. Annual meeting date now committed to no later than Nov 14, 2026. Added new Catalysts #18 (Texas JV/LOI) and #19 (Northland advisor); updated #4, #10, #12/#14. Source: SEC Form 8-K &amp; GlobeNewswire, July 6, 2026.
-  </div>
-  <div class="disclaimer" style="background:rgba(52,211,153,0.06);border-color:rgba(52,211,153,0.2);color:var(--green);margin-top:8px;">
-    📋 <strong>UPDATE LOG — June 17, 2026:</strong> Catalyst #2 (Nasdaq Hearing) resolved as of June 17, 2026 — BGDE formally regained Nasdaq compliance. Catalyst #9 reframed from "Monitor Expiry" to ongoing "$5M/Quarter Equity Compliance Watch" running Q2 2026 through Q1 2027. Source: SEC Form 8-K filed June 17, 2026.
-  </div>
-  <div class="disclaimer" style="background:rgba(52,211,153,0.06);border-color:rgba(52,211,153,0.2);color:var(--green);margin-top:8px;">
-    📋 <strong>UPDATE LOG — June 15, 2026 (original build):</strong> Initial catalyst calendar published covering 17 catalysts across three horizons (0–3, 3–6, and 6–12 months), spanning earnings, regulatory/listing items, contracts, litigation, macro/Bitcoin, governance, insider activity, and industry events. Built on public filings and press releases available as of June 15, 2026. Sources: SEC filings; GlobeNewswire; StockTitan; CoinShares Q1 2026; and other cited public sources.
-  </div>
   <div class="disclaimer" style="margin-top:8px;">
-    ⚠ For informational purposes only. Not financial advice. Facts are cited; forward-looking items are clearly labeled as analyst assumptions. Consult a licensed financial advisor before making investment decisions.
+    ⚠ For informational purposes only. Not financial advice. Facts are cited; forward-looking items are clearly labeled as analyst assumptions. See <strong>Section 8</strong> for methodology, sources, limitations, and document log. Consult a licensed financial advisor before making investment decisions.
   </div>
 </div>
 
@@ -456,184 +511,42 @@
   <div class="legend-item"><div class="dot dot-industry"></div>Industry / Conference</div>
 </div>
 
-
 <!-- ════════════════════════════════════════
-     SECTION 1: COMPLETED & CONFIRMED EVENTS
+     STRUCTURAL NOTE — READ FIRST
 ════════════════════════════════════════ -->
-<div class="horizon">
-  <div class="horizon-header">
-    <span class="horizon-tag done">✅ Completed</span>
-    <div>
-      <div class="horizon-title">Section 1 · Completed &amp; Confirmed Events</div>
-      <div class="horizon-sub">Already occurred as of July 21, 2026 — the management track record</div>
-    </div>
-    <span class="catalyst-count">4 events confirmed</span>
-  </div>
-
-  <p style="font-size:13px;color:var(--label);font-weight:400;margin:0 0 16px;line-height:1.6;">
-    These catalysts have already happened and are settled facts, not forward-looking expectations. They are grouped here so the horizon sections below read as a clean pipeline of what is still ahead. Several of these events also create ongoing forward-looking conditions (e.g. the Nasdaq $5M/quarter equity requirement, and Series D conversions beginning Aug 30) — those forward components are tracked separately in Sections 3–4.
+<div class="gate-note">
+  <h2 style="font-size:15px;font-weight:600;color:#fff;margin:0 0 10px;padding:0;border:none;">Structural Note — How to Read This Calendar</h2>
+  <p style="font-size:13px;color:var(--label);font-weight:400;margin:0 0 12px;line-height:1.65;">
+    BGDE's forward catalysts are <strong style="color:var(--text)">not fully independent</strong>. One event gates several others: the AI/HPC anchor tenant determines whether the Texas site produces revenue, whether project-level financing is available on reasonable terms, and whether the strategic/M&amp;A case is credible. Separately, a second chain runs through the balance sheet — weak quarterly results pressure stockholders' equity, which pressures the Nasdaq $5M/quarter condition, which increases reliance on dilutive financing, which pressures the share price and therefore the Series D conversion ratio.
   </p>
-
-  <div class="catalyst-grid">
-
-<!-- C18: Texas Hood County JV/LOI — NEW Jul 6 2026 -->
-    <div class="catalyst-card" style="border-color: rgba(52,211,153,0.4);">
-      <div class="card-top">
-        <div class="card-accent c-contract"></div>
-        <div class="card-main">
-          <div class="card-meta-row">
-            <span class="cat-badge b-contract">Contract / Business Dev.</span>
-            <span class="timing-badge">✅ CLOSED — July 20, 2026 (acquired Jul 15)</span>
-            <span class="confidence-badge conf-high" style="background:var(--green-dim);color:var(--green);border-color:rgba(52,211,153,0.3);">CLOSED</span>
-          </div>
-          <div class="card-title">✅ Texas AI Datacenter JV with 10NetZero (Hood County) — Acquisition CLOSED; Now a Controlled Development Asset</div>
-          <div class="card-desc">
-            <strong style="color:var(--green)">UPDATE (July 20, 2026):</strong> The acquisition has <strong>closed</strong>. Per the SEC 8-K, the 50/50 JV (via <em>Texas Load House, LLC</em>, governed by an LLC agreement, contribution agreement, and interim-management side agreement) <strong>acquired 30 of the ~50 acres on July 15, 2026 from Century Oaks Independence Farms for ~$10M cash</strong>, with an option to buy the remainder for +$600K. BGDE owns 50%. The site (≈40 miles from Dallas-Fort Worth) has <strong>17 MW operational now</strong>, phased grid expansion to ~111 MW (subject to ERCOT validation), and up to <strong>300 MW</strong> at full buildout with behind-the-meter gas (revised down from the earlier 311 MW figure). BGDE's total operational capacity is now confirmed at <strong>146 MW</strong>. CEO Phil Stanley framed it as moving the project "from a prospective opportunity to a controlled, powered development asset." The company says it is now <strong>actively in discussions with potential development partners and offtakers</strong> — the next milestone to watch.
-          </div>
-          <div class="impact-grid">
-            <div class="impact-box impact">
-              <div class="impact-label">📊 Realized Impact</div>
-              <div class="impact-text">Execution de-risked one level: the site is now owned, not just under LOI. This is the most concrete AI-infrastructure step since the rebrand. But it is raw land + power, not yet revenue.</div>
-            </div>
-            <div class="impact-box upside">
-              <div class="impact-label">⬆ Upside Risk</div>
-              <div class="impact-text">Signing a development partner or offtaker (AI tenant) on the now-owned site would validate the 300 MW roadmap and could drive a peer-style re-rating. Exercising the +$600K option secures the full parcel cheaply.</div>
-            </div>
-            <div class="impact-box downside">
-              <div class="impact-label">⬇ Downside Risk</div>
-              <div class="impact-text">The 300 MW ceiling still depends on ERCOT validation, gas buildout, permitting, financing, and tenants that do not yet exist. ~$10M cash out the door pressures liquidity. Development timelines for AI-ready sites run 12–24+ months.</div>
-            </div>
-          </div>
-          <div class="source-row">
-            <span class="source-label">Source:</span>
-            <span class="source-text">SEC Form 8-K (filed Jul 20, 2026, re: Jul 15 acquisition — ex. 99.1 &amp; body); GlobeNewswire (Jul 20, 2026)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!-- C2: Nasdaq Hearing Decision — RESOLVED Jun 17 2026 -->
-    <div class="catalyst-card" style="border-color: rgba(52,211,153,0.35);">
-      <div class="card-top">
-        <div class="card-accent c-contract"></div>
-        <div class="card-main">
-          <div class="card-meta-row">
-            <span class="cat-badge b-regulatory">Regulatory / Listing</span>
-            <span class="timing-badge">✅ RESOLVED — June 17, 2026</span>
-            <span class="confidence-badge conf-high" style="background:var(--green-dim);color:var(--green);border-color:rgba(52,211,153,0.3);">CONFIRMED</span>
-          </div>
-          <div class="card-title">Nasdaq Compliance Restored — ✅ Resolved; New $5M/Quarter Hurdle Active</div>
-          <div class="card-desc">
-            <strong style="color:var(--green)">UPDATE (June 17, 2026):</strong> Nasdaq formally confirmed on June 16–17, 2026 that BGDE has regained compliance with Listing Rule 5550(b)(1). The prior delisting risk — flagged when stockholders' equity fell below the $2.5M minimum under prior management — has been fully resolved. The company attended a hearing before the Nasdaq Hearings Panel and presented its compliance plan.
-            <br><br>
-            <strong>New ongoing condition:</strong> Nasdaq now requires BGDE to maintain stockholders' equity of at least <strong>$5 million in each quarter</strong> for a twelve-month period beginning with Q2 2026 (quarter ended June 30, 2026), and to promptly notify Nasdaq of any significant compliance-affecting events. This doubles the prior $2.5M minimum and creates a sustained quarterly capital hurdle through mid-2027. COO Cody Smith stated management is "confident in the Company's ability to meet and maintain the heightened $5 million minimum."
-          </div>
-          <div class="impact-grid">
-            <div class="impact-box impact">
-              <div class="impact-label">📊 Resolved Impact</div>
-              <div class="impact-text">Near-term delisting risk removed. This was the single most existential near-term risk in the original calendar. Its resolution is a meaningful positive catalyst.</div>
-            </div>
-            <div class="impact-box upside">
-              <div class="impact-label">⬆ Residual Upside</div>
-              <div class="impact-text">Overhang cleared. Institutional investors who avoided BGDE due to delisting risk may now reconsider. Improves ability to raise capital on less adverse terms.</div>
-            </div>
-            <div class="impact-box downside">
-              <div class="impact-label">⬇ Residual Downside</div>
-              <div class="impact-text">The new $5M/quarter equity requirement is a higher and sustained hurdle. Given ongoing losses ($23.66M net loss in 2025), maintaining this threshold each quarter through mid-2027 is non-trivial. Going-concern risk language remains in forward-looking statements.</div>
-            </div>
-          </div>
-          <div class="source-row">
-            <span class="source-label">Source:</span>
-            <span class="source-text">SEC Form 8-K (Jun 17, 2026); StockTitan (Jun 17, 2026); GlobeNewswire (Jun 17, 2026 press release)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!-- C19: Northland Capital Markets advisor — NEW Jul 6 2026 -->
-    <div class="catalyst-card" style="border-color: rgba(79,142,247,0.35);">
-      <div class="card-top">
-        <div class="card-accent c-governance"></div>
-        <div class="card-main">
-          <div class="card-meta-row">
-            <span class="cat-badge b-governance">Governance / Capital</span>
-            <span class="timing-badge">🆕 ENGAGED — July 6, 2026</span>
-            <span class="confidence-badge conf-high" style="background:var(--green-dim);color:var(--green);border-color:rgba(52,211,153,0.3);">CONFIRMED EVENT</span>
-          </div>
-          <div class="card-title">🆕 Northland Capital Markets Engaged as AI/HPC Financial Advisor</div>
-          <div class="card-desc">
-            <strong style="color:var(--blue)">NEW (July 6, 2026):</strong> BGDE engaged Northland Capital Markets to advise on AI/HPC uses of its power assets, including site-level financing and partnership opportunities. This is a meaningful signal that the company is professionalizing its capital-raising and deal process for the AI pivot, moving beyond related-party financing. Watch for advisor-led outcomes over the next 3–9 months: site-level project financing, strategic partnerships, or a structured capital raise to fund the Texas buildout.
-          </div>
-          <div class="impact-grid">
-            <div class="impact-box impact">
-              <div class="impact-label">📊 Potential Impact</div>
-              <div class="impact-text">Moderate. A credible banker engagement lends legitimacy and can unlock non-dilutive, project-level financing structures that a micro-cap cannot easily arrange alone.</div>
-            </div>
-            <div class="impact-box upside">
-              <div class="impact-label">⬆ Upside Risk</div>
-              <div class="impact-text">Advisor sources a strategic partner, tenant, or attractively-structured site financing — reducing reliance on dilutive equity and validating the assets to institutional capital.</div>
-            </div>
-            <div class="impact-box downside">
-              <div class="impact-label">⬇ Downside Risk</div>
-              <div class="impact-text">Engaging an advisor is a process, not an outcome. A prolonged period without a resulting transaction would signal weak market appetite for the assets on acceptable terms.</div>
-            </div>
-          </div>
-          <div class="source-row">
-            <span class="source-label">Source:</span>
-            <span class="source-text">GlobeNewswire (Jul 6, 2026); SEC Form 8-K (Jul 6, 2026)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!-- C6: Insider Buying Activity -->
-    <div class="catalyst-card">
-      <div class="card-top">
-        <div class="card-accent c-insider"></div>
-        <div class="card-main">
-          <div class="card-meta-row">
-            <span class="cat-badge b-insider">Insider Activity</span>
-            <span class="timing-badge">Jun 12, 2026 (Confirmed)</span>
-            <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
-          </div>
-          <div class="card-title">Board Director Open-Market Share Purchases</div>
-          <div class="card-desc">
-            On June 12, 2026, Director Rodger Davis purchased 2,000 BGDE shares ($14,080) and Director Daniel J. Morrison purchased 3,021 shares ($22,657) in open-market transactions — totaling 5,021 shares and ~$36,737. These represent relatively small purchases in dollar terms but are symbolically meaningful: board members are buying stock with personal funds at current prices, signaling their conviction in the company's trajectory. Importantly, insider ownership (management and Endeavor) already stands at approximately 14%.
-          </div>
-          <div class="impact-grid">
-            <div class="impact-box impact">
-              <div class="impact-label">📊 Potential Impact</div>
-              <div class="impact-text">Moderate signal value. Not large enough to move the stock but confirms directional confidence from within the boardroom.</div>
-            </div>
-            <div class="impact-box upside">
-              <div class="impact-label">⬆ Upside Risk</div>
-              <div class="impact-text">Continued accumulation by directors, especially at higher prices, would reinforce a bullish governance signal. Additional insider purchases post-earnings would be notable.</div>
-            </div>
-            <div class="impact-box downside">
-              <div class="impact-label">⬇ Downside Risk</div>
-              <div class="impact-text">Given related-party dynamics (management already controls ~29% through Endeavor), incremental open-market buys may be less informative than for arms-length directors.</div>
-            </div>
-          </div>
-          <div class="source-row">
-            <span class="source-label">Source:</span>
-            <span class="source-text">TipRanks (Jun 12, 2026 — insider trading disclosure); ChartMill (14% insider ownership)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div class="chain">
+    <span class="node">Texas Site <b>✅ Owned</b></span><span class="arrow">→</span>
+    <span class="node locked">AI/HPC Anchor Tenant <b>#3</b></span><span class="arrow">→</span>
+    <span class="node locked">Project Financing</span><span class="arrow">→</span>
+    <span class="node locked">Buildout &gt;111 MW</span><span class="arrow">→</span>
+    <span class="node locked">First AI/HPC Revenue <b>#11</b></span>
   </div>
-</div><!-- /horizon completed -->
+  <div class="chain" style="margin-top:8px;">
+    <span class="node">Quarterly Results <b>#1, #6</b></span><span class="arrow">→</span>
+    <span class="node">Stockholders' Equity</span><span class="arrow">→</span>
+    <span class="node locked">Nasdaq $5M Test <b>#7</b></span><span class="arrow">→</span>
+    <span class="node locked">Financing Need</span><span class="arrow">→</span>
+    <span class="node locked">Series D Dilution <b>#10</b></span>
+  </div>
+  <p style="margin-top:13px;font-size:12.5px;color:var(--muted);line-height:1.6;">
+    <strong style="color:var(--label)">Confidence levels below refer to timing certainty</strong> — will this happen when stated — <strong style="color:var(--label)">not outcome</strong>. HIGH = statutory, contractual, or already-scheduled. MED = expected but unconfirmed. LOW = speculative. Because these catalysts are correlated rather than independent, treating them as separate probability draws overstates the number of ways this works out. Events already settled as of this report are grouped in <strong style="color:var(--label)">Section 4</strong> rather than mixed into the horizons below.
+  </p>
+</div>
 
 
 <!-- ════════════════════════════════════════
-     SECTION 2: NEAR-TERM 0-3 MONTHS
+     SECTION 1: NEAR-TERM 0-3 MONTHS
 ════════════════════════════════════════ -->
 <div class="horizon">
   <div class="horizon-header">
     <span class="horizon-tag near">Near-Term</span>
     <div>
-      <div class="horizon-title">Section 2 · Near-Term: 0–3 Months</div>
+      <div class="horizon-title">Section 1 · Near-Term: 0–3 Months</div>
       <div class="horizon-sub">July 21 – October 21, 2026</div>
     </div>
     <span class="catalyst-count">5 catalysts ahead</span>
@@ -829,13 +742,13 @@
 
 
 <!-- ════════════════════════════════════════
-     SECTION 3: MID-TERM 3-6 MONTHS
+     SECTION 2: MID-TERM 3-6 MONTHS
 ════════════════════════════════════════ -->
 <div class="horizon">
   <div class="horizon-header">
     <span class="horizon-tag mid">Mid-Term</span>
     <div>
-      <div class="horizon-title">Section 3 · Mid-Term: 3–6 Months</div>
+      <div class="horizon-title">Section 2 · Mid-Term: 3–6 Months</div>
       <div class="horizon-sub">September 15 – December 15, 2026</div>
     </div>
     <span class="catalyst-count">5 catalysts ahead</span>
@@ -1029,16 +942,16 @@
 
 
 <!-- ════════════════════════════════════════
-     SECTION 4: LONG-TERM 6-12 MONTHS
+     SECTION 3: LONG-TERM 6-12 MONTHS
 ════════════════════════════════════════ -->
 <div class="horizon">
   <div class="horizon-header">
     <span class="horizon-tag long">Long-Term</span>
     <div>
-      <div class="horizon-title">Section 4 · Long-Term: 6–12 Months</div>
+      <div class="horizon-title">Section 3 · Long-Term: 6–12 Months</div>
       <div class="horizon-sub">December 15, 2026 – June 15, 2027</div>
     </div>
-    <span class="catalyst-count">5 catalysts ahead</span>
+    <span class="catalyst-count">4 catalysts ahead</span>
   </div>
 
   <div class="catalyst-grid">
@@ -1055,7 +968,7 @@
           </div>
           <div class="card-title">First AI/HPC Revenue — Conversion of Existing MW Capacity</div>
           <div class="card-desc">
-            BGDE's stated pipeline includes 752 MW under development. The investor presentation (May 2026) outlines potential AI/HPC revenue of $140–225M per 100 MW at 40–65% site-level margins — multiple times the mining economics. For this to materialize: (1) a customer contract must be signed, (2) site fit-out (cooling, electrical, network upgrades) must be completed (typically 6–18 months), and (3) compute partners must deploy. The company's track record on this specific goal is poor — the 2024 BE Global AI/HPC agreement produced zero revenue and is now inactive.
+            BGDE's development pipeline now centers on the owned Texas site (up to 300 MW potential) plus its 146 MW operational base. The investor presentation outlines potential AI/HPC revenue of $140–225M per 100 MW at 40–65% site-level margins — multiple times the mining economics. For this to materialize: (1) a tenant contract must be signed, (2) site fit-out (cooling, electrical, network upgrades) must be completed (typically 12–24 months), and (3) compute partners must deploy. The company's track record on this specific goal is poor — the 2024 BE Global AI/HPC agreement produced zero revenue and is now inactive.
           </div>
           <div class="impact-grid">
             <div class="impact-box impact">
@@ -1080,43 +993,7 @@
       </div>
     </div>
 
-    <!-- C14: Dividends / Buybacks -->
-    <div class="catalyst-card">
-      <div class="card-top">
-        <div class="card-accent c-governance"></div>
-        <div class="card-main">
-          <div class="card-meta-row">
-            <span class="cat-badge b-governance">Dividends / Buybacks</span>
-            <span class="timing-badge">Not Expected — 6–12 Month Horizon</span>
-            <span class="confidence-badge conf-high">HIGH CONFIDENCE (no dividend)</span>
-          </div>
-          <div class="card-title">Dividends &amp; Share Buybacks — Not on the Horizon</div>
-          <div class="card-desc">
-            BGDE pays no <em>common</em> dividend and never has. With a net loss of $23.66M in 2025, negative cash flow, and heavy capital needs, a common dividend or buyback in the next 12 months is essentially impossible. <strong style="color:var(--yellow)">Note (July 6, 2026):</strong> the new Series D preferred does carry a <strong>5% dividend (rising to 18% during "Triggering Events")</strong> that sits senior to common stock — this is a cash/obligation drain on the company, not a return to common holders, and it further underscores that common capital returns are off the table. Insiders are buying open-market common shares (a positive signal), but common-level capital return programs are not in play in this timeframe.
-          </div>
-          <div class="impact-grid">
-            <div class="impact-box impact">
-              <div class="impact-label">📊 Potential Impact</div>
-              <div class="impact-text">N/A. This is a zero-probability catalyst. Noted here explicitly to set expectations: investors should not anticipate income or buyback support.</div>
-            </div>
-            <div class="impact-box upside">
-              <div class="impact-label">⬆ Upside Risk</div>
-              <div class="impact-text">In a bull case scenario where AI contracts generate strong cash flows by mid-2027, a buyback announcement could signal financial strength. This is a 2027–2028 possibility at earliest.</div>
-            </div>
-            <div class="impact-box downside">
-              <div class="impact-label">⬇ Downside Risk</div>
-              <div class="impact-text">Capital needs are more likely to drive additional equity issuance (dilution) rather than capital return. The $40M credit line at 12% already carries high carrying costs.</div>
-            </div>
-          </div>
-          <div class="source-row">
-            <span class="source-label">Source:</span>
-            <span class="source-text">GuruFocus (no dividend confirmed); StockAnalysis.com; SEC 10-K (2025 financials)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- C15: Fed / Macro Rate Environment -->
+        <!-- C15: Fed / Macro Rate Environment -->
     <div class="catalyst-card">
       <div class="card-top">
         <div class="card-accent c-macro"></div>
@@ -1231,10 +1108,297 @@
 
 
 <!-- ═══════════════════════
+     SECTION 5: DILUTION OVERLAY
+═══════════════════════ -->
+<!-- ════════════════════════════════════════
+     SECTION 4: COMPLETED & CONFIRMED EVENTS
+════════════════════════════════════════ -->
+<div class="horizon">
+  <div class="horizon-header">
+    <span class="horizon-tag done">✅ Completed</span>
+    <div>
+      <div class="horizon-title">Section 4 · Completed &amp; Confirmed Events</div>
+      <div class="horizon-sub">Already occurred as of July 21, 2026 — the management track record</div>
+    </div>
+    <span class="catalyst-count">4 events confirmed</span>
+  </div>
+
+  <p style="font-size:13px;color:var(--label);font-weight:400;margin:0 0 16px;line-height:1.6;">
+    What management has actually delivered, against which the pending catalysts above can be judged. Each of these resolved a risk this calendar previously tracked as open: the April delisting determination, and the non-binding Texas LOI. Two things are worth holding in view. First, several of these events created <em>new</em> forward conditions rather than closing the file — the Nasdaq resolution imposed the $5M/quarter equity requirement (#7), and the Series D that funded the Texas land begins converting Aug 30 (#10). Second, none of these events is a revenue-generating contract. The record to date is risk removal and asset acquisition, not monetization.
+  </p>
+
+  <div class="catalyst-grid">
+
+<!-- C18: Texas Hood County JV/LOI — NEW Jul 6 2026 -->
+    <div class="catalyst-card" style="border-color: rgba(52,211,153,0.4);">
+      <div class="card-top">
+        <div class="card-accent c-contract"></div>
+        <div class="card-main">
+          <div class="card-meta-row">
+            <span class="cat-badge b-contract">Contract / Business Dev.</span>
+            <span class="timing-badge">✅ CLOSED — July 20, 2026 (acquired Jul 15)</span>
+            <span class="confidence-badge conf-high" style="background:var(--green-dim);color:var(--green);border-color:rgba(52,211,153,0.3);">CLOSED</span>
+          </div>
+          <div class="card-title">✅ Texas AI Datacenter JV with 10NetZero (Hood County) — Acquisition CLOSED; Now a Controlled Development Asset</div>
+          <div class="card-desc">
+            <strong style="color:var(--green)">UPDATE (July 20, 2026):</strong> The acquisition has <strong>closed</strong>. Per the SEC 8-K, the 50/50 JV (via <em>Texas Load House, LLC</em>, governed by an LLC agreement, contribution agreement, and interim-management side agreement) <strong>acquired 30 of the ~50 acres on July 15, 2026 from Century Oaks Independence Farms for ~$10M cash</strong>, with an option to buy the remainder for +$600K. BGDE owns 50%. The site (≈40 miles from Dallas-Fort Worth) has <strong>17 MW operational now</strong>, phased grid expansion to ~111 MW (subject to ERCOT validation), and up to <strong>300 MW</strong> at full buildout with behind-the-meter gas (revised down from the earlier 311 MW figure). BGDE's total operational capacity is now confirmed at <strong>146 MW</strong>. CEO Phil Stanley framed it as moving the project "from a prospective opportunity to a controlled, powered development asset." The company says it is now <strong>actively in discussions with potential development partners and offtakers</strong> — the next milestone to watch.
+          </div>
+          <div class="impact-grid">
+            <div class="impact-box impact">
+              <div class="impact-label">📊 Realized Impact</div>
+              <div class="impact-text">Execution de-risked one level: the site is now owned, not just under LOI. This is the most concrete AI-infrastructure step since the rebrand. But it is raw land + power, not yet revenue.</div>
+            </div>
+            <div class="impact-box upside">
+              <div class="impact-label">⬆ Upside Risk</div>
+              <div class="impact-text">Signing a development partner or offtaker (AI tenant) on the now-owned site would validate the 300 MW roadmap and could drive a peer-style re-rating. Exercising the +$600K option secures the full parcel cheaply.</div>
+            </div>
+            <div class="impact-box downside">
+              <div class="impact-label">⬇ Downside Risk</div>
+              <div class="impact-text">The 300 MW ceiling still depends on ERCOT validation, gas buildout, permitting, financing, and tenants that do not yet exist. ~$10M cash out the door pressures liquidity. Development timelines for AI-ready sites run 12–24+ months.</div>
+            </div>
+          </div>
+          <div class="source-row">
+            <span class="source-label">Source:</span>
+            <span class="source-text">SEC Form 8-K (filed Jul 20, 2026, re: Jul 15 acquisition — ex. 99.1 &amp; body); GlobeNewswire (Jul 20, 2026)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- C2: Nasdaq Hearing Decision — RESOLVED Jun 17 2026 -->
+    <div class="catalyst-card" style="border-color: rgba(52,211,153,0.35);">
+      <div class="card-top">
+        <div class="card-accent c-contract"></div>
+        <div class="card-main">
+          <div class="card-meta-row">
+            <span class="cat-badge b-regulatory">Regulatory / Listing</span>
+            <span class="timing-badge">✅ RESOLVED — June 17, 2026</span>
+            <span class="confidence-badge conf-high" style="background:var(--green-dim);color:var(--green);border-color:rgba(52,211,153,0.3);">CONFIRMED</span>
+          </div>
+          <div class="card-title">Nasdaq Compliance Restored — ✅ Resolved; New $5M/Quarter Hurdle Active</div>
+          <div class="card-desc">
+            <strong style="color:var(--green)">UPDATE (June 17, 2026):</strong> Nasdaq formally confirmed on June 16–17, 2026 that BGDE has regained compliance with Listing Rule 5550(b)(1). The prior delisting risk — flagged when stockholders' equity fell below the $2.5M minimum under prior management — has been fully resolved. The company attended a hearing before the Nasdaq Hearings Panel and presented its compliance plan.
+            <br><br>
+            <strong>New ongoing condition:</strong> Nasdaq now requires BGDE to maintain stockholders' equity of at least <strong>$5 million in each quarter</strong> for a twelve-month period beginning with Q2 2026 (quarter ended June 30, 2026), and to promptly notify Nasdaq of any significant compliance-affecting events. This doubles the prior $2.5M minimum and creates a sustained quarterly capital hurdle through mid-2027. COO Cody Smith stated management is "confident in the Company's ability to meet and maintain the heightened $5 million minimum."
+          </div>
+          <div class="impact-grid">
+            <div class="impact-box impact">
+              <div class="impact-label">📊 Resolved Impact</div>
+              <div class="impact-text">Near-term delisting risk removed. This was the single most existential near-term risk in the original calendar. Its resolution is a meaningful positive catalyst.</div>
+            </div>
+            <div class="impact-box upside">
+              <div class="impact-label">⬆ Residual Upside</div>
+              <div class="impact-text">Overhang cleared. Institutional investors who avoided BGDE due to delisting risk may now reconsider. Improves ability to raise capital on less adverse terms.</div>
+            </div>
+            <div class="impact-box downside">
+              <div class="impact-label">⬇ Residual Downside</div>
+              <div class="impact-text">The new $5M/quarter equity requirement is a higher and sustained hurdle. Given ongoing losses ($23.66M net loss in 2025), maintaining this threshold each quarter through mid-2027 is non-trivial. Going-concern risk language remains in forward-looking statements.</div>
+            </div>
+          </div>
+          <div class="source-row">
+            <span class="source-label">Source:</span>
+            <span class="source-text">SEC Form 8-K (Jun 17, 2026); StockTitan (Jun 17, 2026); GlobeNewswire (Jun 17, 2026 press release)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- C19: Northland Capital Markets advisor — NEW Jul 6 2026 -->
+    <div class="catalyst-card" style="border-color: rgba(79,142,247,0.35);">
+      <div class="card-top">
+        <div class="card-accent c-governance"></div>
+        <div class="card-main">
+          <div class="card-meta-row">
+            <span class="cat-badge b-governance">Governance / Capital</span>
+            <span class="timing-badge">🆕 ENGAGED — July 6, 2026</span>
+            <span class="confidence-badge conf-high" style="background:var(--green-dim);color:var(--green);border-color:rgba(52,211,153,0.3);">CONFIRMED EVENT</span>
+          </div>
+          <div class="card-title">🆕 Northland Capital Markets Engaged as AI/HPC Financial Advisor</div>
+          <div class="card-desc">
+            <strong style="color:var(--blue)">NEW (July 6, 2026):</strong> BGDE engaged Northland Capital Markets to advise on AI/HPC uses of its power assets, including site-level financing and partnership opportunities. This is a meaningful signal that the company is professionalizing its capital-raising and deal process for the AI pivot, moving beyond related-party financing. Watch for advisor-led outcomes over the next 3–9 months: site-level project financing, strategic partnerships, or a structured capital raise to fund the Texas buildout.
+          </div>
+          <div class="impact-grid">
+            <div class="impact-box impact">
+              <div class="impact-label">📊 Potential Impact</div>
+              <div class="impact-text">Moderate. A credible banker engagement lends legitimacy and can unlock non-dilutive, project-level financing structures that a micro-cap cannot easily arrange alone.</div>
+            </div>
+            <div class="impact-box upside">
+              <div class="impact-label">⬆ Upside Risk</div>
+              <div class="impact-text">Advisor sources a strategic partner, tenant, or attractively-structured site financing — reducing reliance on dilutive equity and validating the assets to institutional capital.</div>
+            </div>
+            <div class="impact-box downside">
+              <div class="impact-label">⬇ Downside Risk</div>
+              <div class="impact-text">Engaging an advisor is a process, not an outcome. A prolonged period without a resulting transaction would signal weak market appetite for the assets on acceptable terms.</div>
+            </div>
+          </div>
+          <div class="source-row">
+            <span class="source-label">Source:</span>
+            <span class="source-text">GlobeNewswire (Jul 6, 2026); SEC Form 8-K (Jul 6, 2026)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- C6: Insider Buying Activity -->
+    <div class="catalyst-card">
+      <div class="card-top">
+        <div class="card-accent c-insider"></div>
+        <div class="card-main">
+          <div class="card-meta-row">
+            <span class="cat-badge b-insider">Insider Activity</span>
+            <span class="timing-badge">Jun 12, 2026 (Confirmed)</span>
+            <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+          </div>
+          <div class="card-title">Board Director Open-Market Share Purchases</div>
+          <div class="card-desc">
+            On June 12, 2026, Director Rodger Davis purchased 2,000 BGDE shares ($14,080) and Director Daniel J. Morrison purchased 3,021 shares ($22,657) in open-market transactions — totaling 5,021 shares and ~$36,737. These represent relatively small purchases in dollar terms but are symbolically meaningful: board members are buying stock with personal funds at current prices, signaling their conviction in the company's trajectory. Importantly, insider ownership (management and Endeavor) already stands at approximately 14%.
+          </div>
+          <div class="impact-grid">
+            <div class="impact-box impact">
+              <div class="impact-label">📊 Potential Impact</div>
+              <div class="impact-text">Moderate signal value. Not large enough to move the stock but confirms directional confidence from within the boardroom.</div>
+            </div>
+            <div class="impact-box upside">
+              <div class="impact-label">⬆ Upside Risk</div>
+              <div class="impact-text">Continued accumulation by directors, especially at higher prices, would reinforce a bullish governance signal. Additional insider purchases post-earnings would be notable.</div>
+            </div>
+            <div class="impact-box downside">
+              <div class="impact-label">⬇ Downside Risk</div>
+              <div class="impact-text">Given related-party dynamics (management already controls ~29% through Endeavor), incremental open-market buys may be less informative than for arms-length directors.</div>
+            </div>
+          </div>
+          <div class="source-row">
+            <span class="source-label">Source:</span>
+            <span class="source-text">TipRanks (Jun 12, 2026 — insider trading disclosure); ChartMill (14% insider ownership)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /horizon completed -->
+
+
+<div class="summary-section">
+  <h2>Section 5 · Dilution Overlay — Cuts Across Every Horizon</h2>
+  <p style="font-size:13px;color:var(--label);font-weight:400;margin:0 0 14px;line-height:1.65;">
+    Dilution is not a single dated catalyst; it is a continuous process running across all three horizons, which is why it is presented separately rather than buried in one card. Each item below independently expands the share count or the claim on equity. The Series D mechanics matter most: a floor-priced instrument converting at a discount to trailing VWAP means a weaker share price produces <em>more</em> shares, not fewer — a reflexive loop that can compound.
+  </p>
+  <table class="heat-table">
+    <thead>
+      <tr>
+        <th>Instrument / Event</th>
+        <th>Mechanics</th>
+        <th>Timing</th>
+        <th>Dilution Pressure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Series D Preferred ($15.03M)</td>
+        <td>16,700 shares at $900; converts at 95% of lowest 5-day VWAP; $1.80 floor; monthly caps; 4.99% ownership limit</td>
+        <td>Conversions from Aug 30, 2026</td>
+        <td><span class="heat-mini conf-low">HIGH</span></td>
+      </tr>
+      <tr>
+        <td>Series D Warrants</td>
+        <td>926,748 common shares at $10.81 (120% of pre-close price), 5-year term</td>
+        <td>Exercisable if price recovers</td>
+        <td><span class="heat-mini conf-med">MED</span></td>
+      </tr>
+      <tr>
+        <td>Preferred Dividend</td>
+        <td>5% base, stepping to 18% during "Triggering Events"; senior to common</td>
+        <td>Accruing now</td>
+        <td><span class="heat-mini conf-med">MED</span></td>
+      </tr>
+      <tr>
+        <td>Annual Meeting Vote</td>
+        <td>Proposal to permit Conversion/Warrant Shares above current Nasdaq limits</td>
+        <td>By Nov 14, 2026</td>
+        <td><span class="heat-mini conf-low">HIGH</span></td>
+      </tr>
+      <tr>
+        <td>Resale Registration</td>
+        <td>Statement due Jul 20; effective by Aug 29 (or Sep 28 with full SEC review)</td>
+        <td>Q3 2026</td>
+        <td><span class="heat-mini conf-med">MED</span></td>
+      </tr>
+      <tr>
+        <td>Texas Buildout Financing</td>
+        <td>Capital beyond the ~$10M land spend not yet disclosed; Northland engaged to source</td>
+        <td>Unscheduled</td>
+        <td><span class="heat-mini conf-med">MED</span></td>
+      </tr>
+      <tr>
+        <td>$40M Endeavor Facility</td>
+        <td>12% secured revolver; debt rather than equity, but raises fixed charges</td>
+        <td>Drawn as needed</td>
+        <td><span class="heat-mini conf-high">LOW</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="assumption" style="margin-top:14px;">
+    BGDE has not published a fully-diluted share count or dilution table incorporating Series D conversion at various price levels. The pressure ratings above are analyst judgments based on instrument structure, not company guidance.
+  </div>
+</div>
+
+<!-- ═══════════════════════
+     SECTION 6: NULL CATEGORIES
+═══════════════════════ -->
+<div class="summary-section">
+  <h2>Section 6 · Null Categories — Where There Is No Catalyst</h2>
+  <p style="font-size:13px;color:var(--label);font-weight:400;margin:0 0 14px;line-height:1.65;">
+    Standard catalyst categories with nothing scheduled. These are listed explicitly rather than omitted, because absence is itself informative — particularly for capital returns, where the reason for the gap says something about the company's financial position.
+  </p>
+  <table class="heat-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Common Dividend</td>
+        <td><span class="heat-mini conf-low">NONE EXPECTED</span></td>
+        <td>Never paid. A $23.66M net loss, negative cash flow, and a $5M/quarter equity requirement make a common dividend implausible in this window. Note the Series D <em>preferred</em> dividend (5%, rising to 18%) runs senior to common and drains cash rather than returning it.</td>
+      </tr>
+      <tr>
+        <td>Share Buyback</td>
+        <td><span class="heat-mini conf-low">NONE EXPECTED</span></td>
+        <td>A company issuing floor-priced convertible preferred to fund operations is not simultaneously repurchasing stock. Would also work directly against the Nasdaq equity requirement.</td>
+      </tr>
+      <tr>
+        <td>Product Launch</td>
+        <td><span class="heat-mini conf-med">N/A</span></td>
+        <td>Infrastructure operator, not a product company. The analogue is capacity coming online, tracked in Sections 2–4.</td>
+      </tr>
+      <tr>
+        <td>Investor Day</td>
+        <td><span class="heat-mini conf-med">NONE SCHEDULED</span></td>
+        <td>No investor day announced. Investor presentations have been released via 8-K instead. The annual meeting (by Nov 14) is the nearest scheduled forum.</td>
+      </tr>
+      <tr>
+        <td>Analyst Coverage / Estimates</td>
+        <td><span class="heat-mini conf-med">MINIMAL</span></td>
+        <td>Essentially no sell-side coverage. There is no consensus estimate to beat or miss, which removes a common catalyst mechanism and leaves price discovery to retail flow and news.</td>
+      </tr>
+      <tr>
+        <td>Index Inclusion</td>
+        <td><span class="heat-mini conf-low">UNLIKELY</span></td>
+        <td>At ~$33M market cap, below the threshold for major index addition. Already held by at least one broad-market ETF (VXF), but incremental inclusion is not a near-term catalyst.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════
      SUMMARY HEAT MAP
 ═══════════════════════ -->
 <div class="summary-section">
-  <h2>Section 5 · Catalyst Summary — 4 Completed + 15 Forward-Looking Catalysts</h2>
+  <h2>Section 7 · Catalyst Summary — 4 Completed + 14 Forward-Looking Catalysts</h2>
   <table class="heat-table">
     <thead>
       <tr>
@@ -1373,14 +1537,6 @@
       </tr>
       <tr>
         <td>12</td>
-        <td>Dividends / Buybacks (common)</td>
-        <td><span class="heat-mini b-governance">GOVERNANCE</span></td>
-        <td>Not expected</td>
-        <td><span class="heat-mini conf-high">HIGH</span></td>
-        <td>No common return; Series D pref. divi drains cash</td>
-      </tr>
-      <tr>
-        <td>13</td>
         <td>Fed Rate Path &amp; Risk Asset Sentiment</td>
         <td><span class="heat-mini b-macro">MACRO</span></td>
         <td>H2 2026 – H1 2027</td>
@@ -1388,7 +1544,7 @@
         <td>Directional with rates</td>
       </tr>
       <tr>
-        <td>14</td>
+        <td>13</td>
         <td>Strategic Transactions / M&amp;A</td>
         <td><span class="heat-mini b-governance">GOVERNANCE</span></td>
         <td>H1 2027</td>
@@ -1396,16 +1552,59 @@
         <td>Very high upside if announced</td>
       </tr>
       <tr>
-        <td>15</td>
+        <td>14</td>
         <td>U.S. Crypto Regulatory Environment</td>
         <td><span class="heat-mini b-macro">MACRO</span></td>
         <td>Ongoing 2026–2027</td>
         <td><span class="heat-mini conf-med">MED</span></td>
         <td>Favorable backdrop currently</td>
       </tr>
+      <tr><td colspan="6" style="background:var(--surface2);color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.06em;padding:6px 12px;border:none;">DIVIDENDS &amp; BUYBACKS → SECTION 6 (NULL CATEGORIES) · DILUTION → SECTION 5 (OVERLAY)</td></tr>
         </tbody>
   </table>
 </div>
+
+<!-- ════════════════════════════════════════
+     SECTION 8: METHODOLOGY, SOURCES & DOCUMENT LOG
+════════════════════════════════════════ -->
+<div class="summary-section">
+  <h2>Section 8 · Methodology, Sources &amp; Document Log</h2>
+
+  <h3 style="font-family:var(--mono);font-size:11px;color:var(--label);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 8px;">Confidence Scale</h3>
+  <p style="font-size:13px;color:var(--label);font-weight:300;line-height:1.65;margin-bottom:12px;">
+    <strong style="color:var(--text)">HIGH</strong> = statutory, contractual, or already-scheduled (quarterly filing deadlines; the Nov 14 annual-meeting commitment; the Aug 30 Series D conversion date). <strong style="color:var(--text)">MED</strong> = expected but unconfirmed, or guided without a firm date. <strong style="color:var(--text)">LOW</strong> = speculative, condition-gated, with no disclosed timeline. Confidence refers to <strong style="color:var(--text)">timing certainty, not outcome</strong> — a HIGH-confidence catalyst can still resolve badly.
+  </p>
+
+  <h3 style="font-family:var(--mono);font-size:11px;color:var(--label);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 8px;">Fact vs. Assumption</h3>
+  <p style="font-size:13px;color:var(--label);font-weight:300;line-height:1.65;margin-bottom:12px;">
+    Timing, description, and source lines are sourced statements traceable to filings or press releases. <strong style="color:var(--text)">Purple-bordered blocks are analyst interpretation</strong> and are labeled as such. Impact and upside/downside framing is judgment, not disclosure.
+  </p>
+
+  <h3 style="font-family:var(--mono);font-size:11px;color:var(--label);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 8px;">Known Limitations</h3>
+  <p style="font-size:13px;color:var(--label);font-weight:300;line-height:1.65;margin-bottom:12px;">
+    The Q2 2026 earnings date is a third-party estimate, not company-confirmed. BGDE has <strong style="color:var(--text)">not published a fully-diluted share count</strong> reflecting Series D conversion plus warrants, so any dilution figure here is inference. The "up to 300 MW" Texas ceiling is a company projection contingent on ERCOT validation, gas buildout, permitting, and financing — none of which is secured. Per-MW revenue and margin figures originate from management's investor deck and are illustrative, not contracted. Sell-side coverage is effectively absent, so there is no consensus estimate to check management framing against.
+  </p>
+
+  <h3 style="font-family:var(--mono);font-size:11px;color:var(--label);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 8px;">Primary Sources</h3>
+  <p style="font-size:13px;color:var(--label);font-weight:300;line-height:1.65;margin-bottom:16px;">
+    SEC filings read on EDGAR (CIK 0001218683): Forms 8-K dated Apr 23, Apr 27, Jun 9, Jun 17, Jul 6, and Jul 20, 2026, plus FY2026 10-Q. Company releases via GlobeNewswire (Dec 30, 2025; Apr 23, Apr 27, Jun 9, Jun 17, Jul 6, Jul 20, 2026). Secondary: StockTitan, PRISM MarketView, Seeking Alpha, Quiver Quantitative, TipRanks, ChartMill, GuruFocus, Quartr, SimplyWallSt, MarketScreener, Investing.com. Sector context: CoinShares Bitcoin Mining Report Q1 2026; Amberdata 2026 Outlook. Price and market-cap data as of the July 21, 2026 close.
+  </p>
+
+  <h3 style="font-family:var(--mono);font-size:11px;color:var(--label);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 10px;">Document Log</h3>
+  <div class="disclaimer" style="background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.25);color:var(--green);margin-top:0;">
+    📋 <strong>UPDATE LOG — July 21, 2026 (latest):</strong> On July 20, 2026 BGDE announced the Texas Hood County acquisition has <strong>CLOSED</strong> via the 50/50 JV with 10NetZero. Per the SEC 8-K, the JV acquired 30 of the 50 acres on July 15, 2026 from Century Oaks for ~$10M cash (option on the remainder for +$600K) through Texas Load House, LLC. Operational capacity now confirmed at 146 MW; full-buildout ceiling revised to "up to 300 MW"; company now "actively engaged with potential development partners and offtakers." Catalyst #18 upgraded from LOI-pending to CLOSED. Source: SEC Form 8-K &amp; GlobeNewswire, July 20, 2026.
+  </div>
+  <div class="disclaimer" style="background:rgba(52,211,153,0.05);border-color:rgba(52,211,153,0.18);color:var(--green);margin-top:8px;">
+    📋 <strong>UPDATE LOG — July 8, 2026:</strong> On July 6, 2026 BGDE announced (1) a 50/50 JV with 10NetZero + signed LOI to acquire a power-ready Hood County, Texas AI datacenter site (17 MW live → up to 311 MW; lifts operational capacity to 146 MW); (2) a $15.03M insider-led Series D convertible preferred raise; and (3) engagement of Northland Capital Markets as AI/HPC financial advisor. Annual meeting date now committed to no later than Nov 14, 2026. Added new Catalysts #18 (Texas JV/LOI) and #19 (Northland advisor); updated #4, #10, #12/#14. Source: SEC Form 8-K &amp; GlobeNewswire, July 6, 2026.
+  </div>
+  <div class="disclaimer" style="background:rgba(52,211,153,0.05);border-color:rgba(52,211,153,0.18);color:var(--green);margin-top:8px;">
+    📋 <strong>UPDATE LOG — June 17, 2026:</strong> Catalyst #2 (Nasdaq Hearing) resolved as of June 17, 2026 — BGDE formally regained Nasdaq compliance. Catalyst #9 reframed from "Monitor Expiry" to ongoing "$5M/Quarter Equity Compliance Watch" running Q2 2026 through Q1 2027. Source: SEC Form 8-K filed June 17, 2026.
+  </div>
+  <div class="disclaimer" style="background:rgba(52,211,153,0.05);border-color:rgba(52,211,153,0.18);color:var(--green);margin-top:8px;">
+    📋 <strong>UPDATE LOG — June 15, 2026 (original build):</strong> Initial catalyst calendar published covering 17 catalysts across three horizons (0–3, 3–6, and 6–12 months), spanning earnings, regulatory/listing items, contracts, litigation, macro/Bitcoin, governance, insider activity, and industry events. Built on public filings and press releases available as of June 15, 2026. Sources: SEC filings; GlobeNewswire; StockTitan; CoinShares Q1 2026; and other cited public sources.
+  </div>
+</div>
+
 
 <footer>
   <p><strong>Sources cited in this calendar (all publicly available, through July 2026):</strong> SEC Form 8-K (Apr 23, Apr 27, Jun 9, Jun 17, Jul 6, Jul 20, 2026 — incl. Texas JV/acquisition exhibits on EDGAR CIK 0001218683); SEC Form 10-Q FY2026 (Note 8 Commitments); GlobeNewswire (Dec 30, 2025; Apr 23, Apr 27, Jun 9, Jun 17, Jul 6, Jul 20, 2026); StockTitan (Jun 17, Jul 6, 2026 8-K analyses); PRISM MarketView (Jul 6, 2026); Seeking Alpha (Jul 6, 2026); Quiver Quantitative (Jul 6, 2026); ChartMill.com; GuruFocus; TipRanks (Jun 9, Jun 12, 2026); Quartr.com; SimplyWallSt; MarketScreener (Apr 30, 2026); Investing.com (Dec 30, 2025); CoinShares Bitcoin Mining Report Q1 2026; Amberdata 2026 Outlook (Feb 2026); RaseedInvest (Jun 2026); TradingKey (Jan 2026).</p>
